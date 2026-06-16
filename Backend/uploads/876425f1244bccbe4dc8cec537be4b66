@@ -1,0 +1,19 @@
+npx hardhat run scripts/deploy.js --network localhost
+
+
+cd Backend
+node index.mjs
+"sqlite3.exe" "F:\VS Code\Projects\MedVault\Backend\medvault.db"
+
+ADMIN:
+CONTRACT_ADDRESS=0x73511669fd4dE447feD18BB79bAFeAC93aB7F31f
+PRIVATE_KEY=0xdf57089febbacf7ba0bc227dafbffa9fc08a93fdc68e1e42411a14efcf23656e
+
+
+Files are stored on IPFS and referenced on-chain, reducing blockchain storage costs.
+
+Only doctors can upload, and admins manage who’s approved.
+
+The audit trail is transparent on Ethereum; every upload emits an event and is immutably logged.
+
+I've used a fully local dev stack: local Hardhat node, IPFS, and Node.js backend — no reliance on external services.

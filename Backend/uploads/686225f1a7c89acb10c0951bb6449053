@@ -1,0 +1,12 @@
+1) use case concret
+-de ce am avut nevoie de aceste tehnologii pentru a rezolva problema in felul asta;
+-arhitectura sistemului - stiva de tehnologii (exemplu) ca privire generala;
+pot avea diagrama de timp UML cu interactiunile dintre obicete;
+diagrama de tip entity relationship - baza de date;
+lista cu componente - cum interactioneaaza ele - si pt fiecare componenta;
+spre final - manual de utilizare + manual de instalare;
+cum se utilizeaza sistemul;
+2) lista cu use case-uri + scheme 
+vine user -> introduce datele; sistemul introduce datele
+medical cum foloseste datele, etc;
+3) discutia cu baza de date - trebuie securizata;

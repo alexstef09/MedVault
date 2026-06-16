@@ -1,0 +1,64 @@
+1. Project Summary
+This project proposes the development of MedVault, a decentralized cloud-based platform for hospitals to securely manage and store patient medical records. Utilizing Ethereum blockchain and IPFS (InterPlanetary File System), the system ensures data integrity, transparency, and auditability while maintaining patient privacy. The frontend, built with React.js, provides hospital staff with an intuitive interface to upload, access, and track patient records. Smart contracts handle metadata storage and access logs, while IPFS stores encrypted files. Metamask is used for authentication, ensuring that all interactions are traceable and verifiable.
+
+2. Objectives
+Design a secure, decentralized document storage system for hospital use
+
+Enable file uploads with metadata (patient ID, file type, timestamp) stored on-chain
+
+Ensure traceability and transparency through smart contracts
+
+Provide Ethereum wallet-based authentication (via Metamask)
+
+Demonstrate a working prototype on Ethereum testnet (e.g., Sepolia)
+
+3. Technology Stack
+Frontend: React.js, Ethers.js
+
+Blockchain: Ethereum (Solidity, Hardhat)
+
+Storage: IPFS (Web3.Storage API)
+
+Wallet/Auth: Metamask
+
+Hosting (optional): Vercel / Firebase
+
+4. Deliverables
+Fully functional DApp for record uploads and retrievals
+
+Smart contract deployed on a public Ethereum testnet
+
+IPFS file upload & retrieval integration
+
+Research document and technical report
+
+Demonstration video and source code repository
+
+5. Use Case Example
+A hospital doctor, Dr. Smith, uploads a patient's blood test results using the web app. The file is stored securely on IPFS, and the corresponding IPFS hash, patient ID, uploader address, and timestamp are saved in a smart contract on Ethereum. Later, another authorized doctor queries the patient ID using the app, retrieving all associated records and verifying their authenticity through the blockchain.
+
+6. Blockchain Background (Intermediate Level)
+Smart Contracts (Ethereum)
+Store metadata about uploaded files. Each record includes the IPFS hash, patient ID, uploader’s address, and timestamp. Solidity smart contracts ensure data is immutable and publicly verifiable.
+
+IPFS
+Files are stored on IPFS, which uses content-addressing to return a unique hash for each file. Any change to the file alters the hash, making tampering detectable. Files can be encrypted prior to upload.
+
+Ethereum
+Acts as an immutable, decentralized ledger. All interactions (uploads, queries) are logged on-chain. Ethereum’s Proof-of-Stake consensus ensures secure and verifiable operations. Development and testing are done on Sepolia testnet.
+
+Metamask
+Used for user authentication and transaction signing. Every interaction (e.g., uploading metadata) is signed by the user’s wallet, providing strong identity assurance and preventing unauthorized actions.
+
+7. Advanced Concepts (Optional Enhancements)
+Role-based access control using Solidity function modifiers
+
+Event logging on file access to enable traceability
+
+Encrypted file storage with off-chain key sharing
+
+Multi-signature verification for sensitive uploads
+
+Zero-Knowledge Proofs (ZKPs) for future privacy enhancements
+
+Layer 2 scalability using networks like Polygon for reduced gas fees

@@ -1,0 +1,64 @@
+Blockchain System Overview (Short Version)
+1. Smart Contracts (Ethereum)
+Store metadata: IPFS hash, patient ID, uploader’s address, and timestamp.
+
+Serve as public audit logs and optional access controllers.
+
+Example Functions:
+
+uploadFile(patientId, ipfsHash) → stores metadata and emits an event.
+
+getFiles(patientId) → retrieves all files for a patient.
+
+Optional: Emit events for file views or maintain an access log.
+
+Solidity Snippet:
+
+solidity
+Copy
+Edit
+struct File {
+    string ipfsHash;
+    address uploader;
+    uint256 timestamp;
+}
+mapping(string => File[]) public patientFiles;
+
+function uploadFile(string memory patientId, string memory ipfsHash) public {
+    patientFiles[patientId].push(File(ipfsHash, msg.sender, block.timestamp));
+}
+2. IPFS (InterPlanetary File System)
+Stores actual documents (PDFs, test results, etc.).
+
+Returns a content-addressed hash (CID)—a unique fingerprint of the file.
+
+CID changes if even 1 byte of the file is altered, allowing verifiability.
+
+Optional: Encrypt files with AES/RSA before uploading for additional privacy.
+
+3. Ethereum Blockchain
+Acts as a public, immutable ledger.
+
+Logs all metadata transactions permanently and securely.
+
+Uses Proof of Stake (PoS) for consensus.
+
+Each action requires gas; testnets like Sepolia are used to avoid real costs.
+
+Optionally migrate to Polygon or another Layer 2 for scalability.
+
+4. Metamask Integration
+Allows hospital staff to log in via their Ethereum wallet.
+
+All file uploads and actions are signed by the user, ensuring traceability.
+
+Metamask ensures non-repudiation—each transaction has a digital signature.
+
+Optional Advanced Features
+
+Feature	Description
+Role-based Access	Restrict functions to roles like doctor or admin using Solidity modifiers.
+Event Logging	Emit events for every record access to create an access trail.
+Chainlink Timestamping	Use Chainlink oracles for trusted external timestamps.
+Zero-Knowledge Proofs	Mention ZKPs to maintain privacy while proving access/authentication.
+Multi-signature Uploads	Require multiple sign-offs for uploading sensitive records.
